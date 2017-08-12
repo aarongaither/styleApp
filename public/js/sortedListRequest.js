@@ -45,18 +45,21 @@
                                     // services  : (data[i].services),
                                     // rating    : (data[i].Review.rating),
                                     lat       : (data[i].address_lat),
-                                    long      : (data[i].address_long)
+                                    long      : (data[i].address_long),
+                                    reference : ""
                             };
                             console.log('display = ', display)                            
+                            
+                            //  populate markers on map
+                            if ((display.lat !== null) && (display.long !== null)) {
+                                console.log('latlong = '+ display.lat +" , "+display.long)
+                                display.reference = placeMarker(display.lat, display.long); 
+                                console.log('display.reference = ', display.reference)  
+                            }
                             //  dynamically build the display box
                             buildStylistDisplay(i, display);
                             makeStylistMiniProfile(data[i]);
                             fillStylistMiniProfile(data[i]);
-                            //  populate markers on map
-                            if ((display.lat !== null) && (display.long !== null)) {
-                                console.log('latlong = '+ display.lat +" , "+display.long)
-                                placeMarker(display.lat, display.long)   
-                            }
                         }
               }
     	  });
@@ -84,7 +87,8 @@
                           $('<img>', {src: 'http://bulma.io/images/placeholders/128x128.png',
                                       alt: 'Image'}
                            )
-                      )
+                      ).append(
+                          $('<p>', {class: 'ref', text: display.reference}))
                   )
               ).append(
                   $('<div/>', {class: 'media-content'}).append(
@@ -125,6 +129,7 @@
         };
         marker = new google.maps.Marker(markerOptions);
         marker.setMap(map);
+        return markerOptions.label;
     };   
 
 //===============================================================
