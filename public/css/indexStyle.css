@@ -21,7 +21,7 @@ h1 {
 
 .navbar {
     min-height: 3.25rem;
-    position: absolute;
+    /*position: absolute;*/
     background: transparent;
 }
 
@@ -46,7 +46,7 @@ h1 {
 
 #logo {
     font-size: 35px;
-    color: blue;
+    color: red;
 }
 
 .columns {
@@ -135,7 +135,7 @@ input {
 
 #service {
     margin-top: 15px;
-    margin-left: 30%;
+    margin-left: 7%;
 }
 
 #submit-login {
