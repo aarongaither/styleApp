@@ -1,7 +1,9 @@
 $(document).ready(function() {
     function setUser () {
-        //change links to profile link, with name
-        //add signout link
+        $('#modal-btn-one').hide();
+        $('#modal-btn-two').hide();
+        $('#signed-in-name').show();
+        $('#sign-out-btn').show();
     }
 
     function checkAuth () {
