@@ -1,3 +1,6 @@
+let signedInUsername = $('#signed-in-name').hide();
+let signOutBtn = $('#sign-out-btn').hide();
+
 $('#modal-btn-one').on('click', function() {
     $('#modal-one').fadeIn("fast", function() {});
 });
