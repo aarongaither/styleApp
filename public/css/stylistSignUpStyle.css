@@ -7,7 +7,7 @@ body {
 
 .navbar {
     min-height: 3.25rem;
-    position: fixed;
+    /*position: fixed;*/
     background: transparent;
     color: black;
 }
@@ -61,12 +61,12 @@ body {
 
 .navbar {
     min-height: 3.25rem;
-    position: absolute;
+    /*position: absolute;*/
 }
 
 #logo {
     font-size: 35px;
-    color: black;
+    color: red;
 }
 
 .columns {
@@ -181,7 +181,7 @@ input {
 
 #service {
     margin-top: 15px;
-    margin-left: 30%;
+    margin-left: 7%;
 }
 
 #distance-search {
