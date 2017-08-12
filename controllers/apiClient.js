@@ -8,10 +8,6 @@ router.get("/", (req, res) => {
     }).then(result => res.json(result)).catch(err => console.log(err));
 })
 
-// router.post("/", (req, res) => {
-//     db.Client.create(req.body).then(result => res.json(result)).catch(err => console.log(err));
-// })
-
 router.post("/", (req, res) => {
     getCoordinates(req.body, newClient => { 
         console.log('newClient = ', newClient)

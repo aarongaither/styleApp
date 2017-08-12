@@ -22,10 +22,10 @@ $('.cancel-signup').on('click', function() {
     $('.modal').fadeOut("fast", function() {});
 });
 
-$('.box').on('click', function() {
-    $('#stylistProfile').fadeIn("fast", function() {});
+$('body').on('click', '.box',function() {
+    $('#stylistProfile-'+$(this).attr('id')).fadeIn("fast", function() {});
 });
 
-$('#exit-profile').on('click', function() {
+$('body').on('click', '.exit-profile' ,function() {
     $('.modal').fadeOut("fast", function() {});
 });

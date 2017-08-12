@@ -41,7 +41,7 @@ module.exports = function(sequelize, DataTypes) {
 		lowlights: DataTypes.BOOLEAN,
 		ombre: DataTypes.BOOLEAN,
 		balayage: DataTypes.BOOLEAN,
-		hair_do: DataTypes.BOOLEAN,
+		hairdo: DataTypes.BOOLEAN,
 		travel_range: {
 			type: DataTypes.INTEGER,
 			allowNull: false
@@ -69,7 +69,8 @@ module.exports = function(sequelize, DataTypes) {
 		address_long: {
 			type: DataTypes.FLOAT,
 			validate: { min: -180, max: 180 }
-		} 
+		},
+		picture: DataTypes.STRING
 	},
 	{
 		underscored: true
@@ -79,9 +80,8 @@ module.exports = function(sequelize, DataTypes) {
 	  Stylist.hasMany(models.Review, {
 	    onDelete: "cascade"
 	  });
+	  Stylist.hasOne(models.User);
 	};
-
-	Stylist.associate = models => Stylist.hasOne(models.User);
-
+	
 	return Stylist;
 };

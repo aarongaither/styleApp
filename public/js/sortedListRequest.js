@@ -3,6 +3,7 @@
 //						to build a list
 // =============================================================
 // "use strict"
+
 (function(window, google){
   $(document).ready(function() {
     console.log("in module sortedlistrequest");
@@ -20,12 +21,12 @@
         var params = (new URL(document.location)).searchParams;
         console.log('params ', params)
         var service = params.get("service");
-        console.log('service ', service)
-        var range = parseInt(params.get("range"));
-
+        console.log('service = ', service)
+        var searchAddress = params.get("address");
+        console.log('searchAddress = ', searchAddress)
 
         //  request data from server side
-      	$.get("../api/stylist/search/" + service, function(data) {
+      	$.get("../api/stylist/search/" + service + "/" + searchAddress, function(data) {
       				console.log("stylists", data);
       				if (data) {
                 console.log("how many = ", data.length);
@@ -40,6 +41,7 @@
                                                 +" "
                                                 +data[i].last_name),
                                     bio       : (data[i].bio),
+                                    email     : data[i].email,
                                     // services  : (data[i].services),
                                     // rating    : (data[i].Review.rating),
                                     lat       : (data[i].address_lat),
@@ -48,7 +50,8 @@
                             console.log('display = ', display)                            
                             //  dynamically build the display box
                             buildStylistDisplay(i, display);
-
+                            makeStylistMiniProfile(data[i]);
+                            fillStylistMiniProfile(data[i]);
                             //  populate markers on map
                             if ((display.lat !== null) && (display.long !== null)) {
                                 console.log('latlong = '+ display.lat +" , "+display.long)
@@ -74,7 +77,7 @@
       var headDiv = $('#boxlist');
 
       headDiv.append(
-          $('<div/>', {'class': 'box'}).append(
+          $('<div/>', {'class': 'box', id: display.id}).append(
               $('<article/>', {'class': 'media'}).append(
                   $('<div/>', {class: 'media-left'}).append(
                       $('<figure/>', {class: 'image is-84x84'}).append(
@@ -87,11 +90,9 @@
                   $('<div/>', {class: 'media-content'}).append(
                       $('<div/>', {class: 'content'}).append(
                           $('<p/>').append(
-                              $('<strong/>', {class: 'name', text: display.name})
+                              $('<strong/>', {class: 'name', text: display.name + " - "})
                           ).append(
-                              $('<small/>', {class: 'username', text: '@JohnSmith'})
-                          ).append(
-                              $('<small/>', {class: 'minutes', text: '31m'})
+                              $('<small/>', {class: 'username', text: display.email})
                           ).append(
                               $('<br>')
                           )
@@ -100,48 +101,12 @@
                       ).append(
                           $('<p/>')
                       )
-                  ).append(
-                      $('<nav/>', {class: 'level is-mobile'}).append(
-                          $('<div/>', {class: 'level-left'}).append(
-                              $('<a/>', {class: 'level-item'}).append(
-                                  //id of stylist hidden in the buttons
-                                  $('<span/>', {class: 'tag is-primary', text: 'Email', value: display.id})
-                              )
-                          ).append(
-                              $('<a/>', {class: 'level-item'}).append(
-                                  $('<span/>', {class: 'tag is-primary', text: 'Profile', value: display.id})
-                              )
-                          ).append(
-                              $('<a/>', {class: 'level-item'}).append(
-                                  $('<span/>', {class: 'tag is-primary', text: 'Back'})
-                              )
-                          )
-                      )
                   )
               )
           )
       );
 
     };      
-
-//===============================================================
-//      new search event listener
-//===============================================================
-      $(document).on("click", "#search-all", searchAll);
-
-    function serviceSearch() {
-        return $('#service-search').val().replace(' ', '+');
-    }
-
-    function addressSearch() {
-        return $('#addyinput').val()
-    }
-
-    function searchAll() { 
-      var svcSearch = serviceSearch();
-      var addySearch = addressSearch();
-        window.location.href = "../list/?service=" + svcSearch +"&address=" + addySearch+"/"
-    }
 
 //===============================================================
 //      populate markers on map
@@ -181,5 +146,80 @@
   
     // });    
   });
+
+  function fillStylistMiniProfile(stylist){
+      function boolToYes(bool) {
+          return bool ? "Yes!" : "No."
+      }
+
+      $('#profile-name-' + stylist.id).text(stylist.first_name +" "+ stylist.last_name);
+      $('#profile-email-' + stylist.id).text(stylist.email)
+      $('#profile-bio-' + stylist.id).text(stylist.bio)
+      $('#profile-phone-' + stylist.id).text(stylist.phone_number)
+      $('#profile-travel-' + stylist.id).text(stylist.travel_range)
+      $('#profile-city-' + stylist.id).text(stylist.city)
+      $('#profile-state-' + stylist.id).text(stylist.state)
+      $('#profile-cut-' + stylist.id).text(boolToYes(stylist.cut))
+      $('#profile-blowdry-' + stylist.id).text(boolToYes(stylist.blowdry))
+      $('#profile-color-' + stylist.id).text(boolToYes(stylist.color))
+      $('#profile-highlights-' + stylist.id).text(boolToYes(stylist.highlights))
+      $('#profile-lowlights-' + stylist.id).text(boolToYes(stylist.lowlights))
+      $('#profile-ombre-' + stylist.id).text(boolToYes(stylist.ombre))
+      $('#profile-balayage-' + stylist.id).text(boolToYes(stylist.balayage))
+      $('#profile-hairdo-' + stylist.id).text(boolToYes(stylist.hairdo))
+  }
+
+  function makeStylistMiniProfile(stylist){
+      var profileList = ["Name", "Email", "Bio", "Phone", "Travel", "City", "State", "Cut",
+       "Blowdry", "Color", "Highlights", "Lowlights", "Ombre", "Balayage", "Hairdo"];
+
+      $("body").append(
+          $("<div/>", {id: "stylistProfile-" + stylist.id, class: "modal"}).append(
+              $("<div/>", {class: "modal-background"})
+          ).append(
+              $("<div/>", {class: "modal-card", id: "stylistCard-"+stylist.id}).append(
+                  $("<header/>",  {class: "modal-card-head"}).append(
+                      $("<p/>", {class: "modal-card-title", text: "Stylist"})
+                  )
+              )
+          )
+      )
+
+      var list = $("<ul/>")
+
+      profileList.forEach(function(elem) {
+          list.append(
+              $("<li/>", {text: elem+ ": "}).append(
+                  $("<span/>", {id: "profile-"+elem.toLowerCase()+"-"+stylist.id})
+              )
+          )
+      })
+
+      $("#stylistCard-"+stylist.id).append(
+          $("<section/>", {class: "modal-card-body"}).append(
+              $("<div/>", {class: "field is-grouped"}).append(
+                  $("<div/>", {class: "control"}).append(
+                      $("<figure/>", {class: "image is-84x84"}).append(
+                          $("<img>", {
+                              src: "http://bulma.io/images/placeholders/128x128.png",
+                              alt: "Image"
+                              }
+                          )
+                      )
+                  ).append(
+                      list
+                  ).append(
+                      $("<div/>", {class: "control"}).append(
+                          $("<a/>", {href: "mailto:"+stylist.email, target: "_top", text: "Email"})
+                      )
+                  ).append(
+                      $("<a/>", {class: "exit-profile", text: "Exit"})
+                  )
+              )
+          )
+      )
+  }
+
+
 })(window, google);
 
