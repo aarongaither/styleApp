@@ -6,7 +6,6 @@ var map;
 var infowindow;
 var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 var labelIndex = 0;
-// module.exports = function(app) {
 (function(window, google){
 	
 		var mapOptions = {

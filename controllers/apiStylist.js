@@ -24,6 +24,16 @@ router.put("/", (req, res) => {
     }).then(result => res.json(result)).catch(err => console.log(err));
 })
 
+router.put("/:id/:photo", (req, res) => {
+    db.Stylist.update({
+        picture: './photos/' +req.params.photo+'.jpg'
+    },{
+        where: {
+            id: req.params.id
+        }
+    })
+})
+
 router.get("/:id", (req, res) => {
     db.Stylist.findOne({
         include: [{model: db.Review, include: [db.Client]}],
