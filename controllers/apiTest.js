@@ -23,7 +23,8 @@ const _stylistData = [
 		state: 'CA',
 		zipcode: '92122',
 		address_lat: 32.853791,
-		address_long: -117.203928
+		address_long: -117.203928,
+		picture: "./photos/Linda.jpg"
 	},
 	{
 		first_name: 'Peter',
@@ -46,7 +47,8 @@ const _stylistData = [
 		state: 'CA',
 		zipcode: '92122',
 		address_lat: 32.852727,
-		address_long: -117.184973
+		address_long: -117.184973,
+		picture: "./photos/peter.jpg"
 	},
 	{
 		first_name: 'Danny',
@@ -69,7 +71,8 @@ const _stylistData = [
 		state: 'CA',
 		zipcode: '92111',
 		address_lat: 32.860259,
-		address_long: -117.187881
+		address_long: -117.187881,
+		picture: "./photos/danny.jpg"
 	},
 	{
 		first_name: 'Shannon',
@@ -92,7 +95,8 @@ const _stylistData = [
 		state: 'CA',
 		zipcode: '92115',
 		address_lat: 32.760458,
-		address_long: -117.068455
+		address_long: -117.068455,
+		picture: "./photos/shannon.jpg"
 	}
 ]
 

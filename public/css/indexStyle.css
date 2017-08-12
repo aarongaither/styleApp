@@ -113,6 +113,10 @@ input {
     border-top: 0px solid transparent;
 }
 
+.image img {
+    width: 184px;
+}
+
 #sign-in-card {
     width: 335px;
 }
