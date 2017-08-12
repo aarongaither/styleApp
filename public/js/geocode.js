@@ -7,7 +7,7 @@ var infowindow;
 var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 var labelIndex = 0;
 (function(window, google){
-	
+	$(document).ready(function() {
 		var mapOptions = {
 		    center: {
 		    		 lat: 33.0457848,
@@ -45,6 +45,8 @@ var labelIndex = 0;
 			  // Browser doesn't support Geolocation
 			  handleLocationError(false, infoWindow, map.getCenter());
 			}
+
+			google.maps.event.trigger(map, "resize");
 		}
 
       	function handleLocationError(browserHasGeolocation, infoWindow, pos) {
@@ -56,5 +58,5 @@ var labelIndex = 0;
       	}
 
       	initMap()
-
+    });
 }(window, google));
