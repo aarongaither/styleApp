@@ -17,6 +17,7 @@ router.post("/", (req, res) => {
 })
 
 router.put("/", (req, res) => {
+    console.log(req.body)
     db.Stylist.update(req.body, {
         where: {
             id: req.body.id
