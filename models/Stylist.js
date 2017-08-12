@@ -41,7 +41,7 @@ module.exports = function(sequelize, DataTypes) {
 		lowlights: DataTypes.BOOLEAN,
 		ombre: DataTypes.BOOLEAN,
 		balayage: DataTypes.BOOLEAN,
-		hair_do: DataTypes.BOOLEAN,
+		hairdo: DataTypes.BOOLEAN,
 		travel_range: {
 			type: DataTypes.INTEGER,
 			allowNull: false
