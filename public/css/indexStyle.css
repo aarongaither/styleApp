@@ -21,7 +21,7 @@ h1 {
 
 .navbar {
     min-height: 3.25rem;
-    position: absolute;
+    /*position: absolute;*/
     background: transparent;
 }
 
@@ -46,7 +46,7 @@ h1 {
 
 #logo {
     font-size: 35px;
-    color: blue;
+    color: red;
 }
 
 .columns {
@@ -113,6 +113,10 @@ input {
     border-top: 0px solid transparent;
 }
 
+.image img {
+    width: 184px;
+}
+
 #sign-in-card {
     width: 335px;
 }
@@ -131,7 +135,7 @@ input {
 
 #service {
     margin-top: 15px;
-    margin-left: 30%;
+    margin-left: 7%;
 }
 
 #submit-login {
@@ -233,8 +237,7 @@ a.button {
 }
 
 .search-bar {
-    margin-left: 60%;
-    float: right;
+    float: none;
     display: -webkit-box;
 }
 

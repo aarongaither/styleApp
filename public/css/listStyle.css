@@ -30,7 +30,7 @@ body {
 
 .navbar {
     min-height: 3.25rem;
-    position: relative;
+    /*position: relative;*/
     background: transparent;
 }
 
@@ -40,7 +40,7 @@ body {
 
 #logo {
     font-size: 35px;
-    color: blue;
+    color: red;
 }
 
 .columns {
@@ -237,7 +237,7 @@ a.button {
 
 #service {
     margin-top: 15px;
-    margin-left: 30%;
+    margin-left: 7%;
 }
 
 #distance-search {

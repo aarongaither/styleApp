@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.0/css/bulma.min.css">
     <link href="https://fonts.googleapis.com/css?family=Contrail+One" rel="stylesheet">
@@ -52,8 +52,45 @@
                     </figure>
                 </div>
             </div>
+
         </div>
     </div>
+
+
+    <div class="parallax">
+            <div class="columns">
+            <div class="column">
+                        <div class="search-text">
+                            Search for the right stylist based on specialty.
+                        </div>
+                    <div class="search-bar">
+            <div id="service" class="control">
+                <div class="select">
+                    <select id="service-search" placeholder="Search Specialty">
+                        <div class="dropdown">
+                            <option>Cut</option>
+                            <option>Blow Dry</option>
+                            <option>Color</option>
+                            <option>Highlights</option>
+                            <option>Ombre</option>
+                            <option>Balayage</option>
+                            <option>Hairdo</option>
+                            <option>Lowlights</option>
+                        </div>
+                    </select>
+                </div>
+            </div>
+            <div id="distance-search" class="control">
+                <div id="distance">
+                    <input id="addyinput" class="input" type="text" placeholder="Street Address">
+                </div>
+            </div>
+            <a class="button is-active" id="search-all">Find A Stylist</a>
+        </div>
+    </div>
+</div>
+
+
     <div id="footer" class="parallax">
         <div id="text-area">
             <div class="columns">
@@ -235,7 +272,6 @@
     <!--         -->
     <script type="text/javascript" src="js/index.js"></script>
     <script type="text/javascript" src="js/indexStyle.js"></script>
-    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 </body>
 
 </html>

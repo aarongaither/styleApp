@@ -42,6 +42,7 @@
                                                 +data[i].last_name),
                                     bio       : (data[i].bio),
                                     email     : data[i].email,
+                                    photo     : '.'+data[i].picture,
                                     // services  : (data[i].services),
                                     // rating    : (data[i].Review.rating),
                                     lat       : (data[i].address_lat),
@@ -84,7 +85,7 @@
               $('<article/>', {'class': 'media'}).append(
                   $('<div/>', {class: 'media-left'}).append(
                       $('<figure/>', {class: 'image is-84x84'}).append(
-                          $('<img>', {src: 'http://bulma.io/images/placeholders/128x128.png',
+                          $('<img>', {src: display.photo,
                                       alt: 'Image'}
                            )
                       ).append(
@@ -206,7 +207,7 @@
                   $("<div/>", {class: "control"}).append(
                       $("<figure/>", {class: "image is-84x84"}).append(
                           $("<img>", {
-                              src: "http://bulma.io/images/placeholders/128x128.png",
+                              src: '.'+stylist.picture,
                               alt: "Image"
                               }
                           )

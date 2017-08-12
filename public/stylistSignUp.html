@@ -4,38 +4,44 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.0/css/bulma.min.css">
     <link href="https://fonts.googleapis.com/css?family=Contrail+One" rel="stylesheet">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/stylistSignUpStyle.css">
-    <title>Volume - Stylist Sign Up</title>
+    <title>Linda's List - Stylist Sign Up</title>
 </head>
 <div id="main" class="columns">
-    <nav class="navbar">
-        <div class="navbar-brand">
-            <a id="logo" class="navbar-item" href="https://github.com/aarongaither/styleApp">
-      Volume
+    <div id="main" class="columns">
+        <nav class="navbar">
+            <div class="navbar-brand">
+                <a id="logo" class="navbar-item" href="https://github.com/aarongaither/styleApp">
+      Linda's List
     </a>
-            <a id="home-btn" class="navbar-item is-hidden-desktop-only" href="index.html">
+                <a id="home-btn" class="navbar-item is-hidden-desktop-only" href="../index.html">
         Home
       </a>
-        </div>
-        <div id="navMenuExample" class="navbar-menu">
-            <div class="navbar-start">
             </div>
-            <div class="navbar-end">
-                <a id="modal-btn-two" class="navbar-item is-hidden-desktop-only">
+            <div id="navMenuExample" class="navbar-menu">
+                <div class="navbar-start">
+                </div>
+                <div class="navbar-end">
+                    <a id="modal-btn-two" class="navbar-item">
         Sign In
       </a>
-                <a id="modal-btn-one" class="navbar-item is-hidden-desktop-only">
+                    <a id="signed-in-name" class="navbar-item" href="">
+        Name
+      </a>
+                    <a id="modal-btn-one" class="navbar-item">
         Sign Up
       </a>
+                    <a id="sign-out-btn" class="navbar-item">
+        Sign Out
+      </a>
+                </div>
             </div>
-        </div>
-    </nav>
-</div>
+        </nav>
 <!--first-name-->
 <div class="columns">
     <div class="column is-half is-offset-one-quarter">
@@ -231,9 +237,10 @@
         </div>
     </div>
 <!-- modal end -->
+<script type="text/javascript" src="js/search.js"></script>
+<script type="text/javascript" src="js/userAuth.js"></script>
 <script type="text/javascript" src="js/stylistSignUp.js"></script>
 <script type="text/javascript" src="js/stylistSignUpStyle.js"></script>
-<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 </body>
 
 </html>
