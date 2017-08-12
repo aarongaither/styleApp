@@ -85,7 +85,7 @@ const _stylistData = [
 		lowlights: false,
 		ombre: true,
 		balayage: false,
-		hair_do: true,
+		hairdo: true,
 		travel_range: 30,
 		street_address: '5987 El Cajon Blvd',
 		city: 'San Diego',
