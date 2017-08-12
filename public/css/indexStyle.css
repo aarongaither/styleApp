@@ -1,6 +1,6 @@
 body {
     font-family: 'Contrail One', cursive;
-    height: 1000px;
+    height: 100%;
     background-repeat: no-repeat;
 }
 
@@ -174,7 +174,7 @@ a.button {
     width: 300px;
     font-size: 25px;
     font-family: 'Contrail One', cursive;
-    height: 76px;
+    height: 59px;
     margin-bottom: 39px;
 }
 
@@ -185,7 +185,7 @@ a.button {
     width: 300px;
     font-size: 25px;
     font-family: 'Contrail One', cursive;
-    height: 76px;
+    height: 59px;
     margin-bottom: 25px;
 }
 
@@ -286,15 +286,15 @@ p.about {
     font-size: 25px;
     opacity: 1;
     color: white;
-    text-align: center;
+    text-align: justify;
     width: 870px;
-    margin-left: 22%;
+    margin-left: 20%;
     padding-bottom: 75px;
 }
 
 #lamp-text {
     font-family: 'Satisfy', cursive;
-    margin-left: -798px;
+    margin-left: -705px;
     position: absolute;
     width: 104px;
     color: gray;
@@ -338,8 +338,10 @@ p.about {
 }
 
 .about-title {
+    font-family: 'Contrail One', cursive;
     text-align: center;
-    margin: 40px;
+    margin: 15px;
+    font-size: 40px;
     color: red;
 }
 
@@ -371,9 +373,13 @@ p.about {
     color: red;
     display: block;
     margin-top: 1%;
-    margin-left: -14%;
 }
 
 .card {
     margin: 55px;
+}
+
+.search-text {
+    text-align: center;
+    font-size: 40px;
 }
