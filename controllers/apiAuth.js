@@ -2,10 +2,7 @@ const db = require("../models");
 const router = require('express').Router();
 const passport = require('passport');
 
-router.post('/login', passport.authenticate('login', {
-	successRedirect: '/',
-	failureRedirect: '/'
-}));
+router.post('/login', passport.authenticate('login'), (req, res) => res.redirect('/'));
 
 router.get('/signout', (req, res) => {
   req.logout();
