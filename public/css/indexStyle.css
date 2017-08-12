@@ -233,8 +233,7 @@ a.button {
 }
 
 .search-bar {
-    margin-left: 60%;
-    float: right;
+    float: none;
     display: -webkit-box;
 }
 

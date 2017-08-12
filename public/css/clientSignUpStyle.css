@@ -1,44 +1,37 @@
 body {
     font-family: 'Contrail One', cursive;
-    background-size: cover;
-    height:100%;
-    background-attachment: fixed;
+    height: 1000px;
     background-repeat: no-repeat;
-    background-color: #FFFAF7;
 }
 
-#addyinput{
-    border-radius: 0px;
-    width: 385px;
+h1 {
+    font-family: 'Satisfy', cursive;
+    font-size: 30px;
+    color: white;
 }
 
-#modal-btn-one,
-#modal-btn-two {
-    color: black;
+#par {
+    background-image: url("../imgs/wall.jpg");
+    font-size: 75px;
+    color: red;
+    padding-top: 25%;
+    text-align: center;
 }
 
-#logo {
-    font-size: 35px;
-    color: blue;
+
+.navbar {
+    min-height: 3.25rem;
+    position: absolute;
+    background: transparent;
 }
 
-.column.is-half.is-offset-one-quarter {
+#main {
     background: white;
-    opacity: 0.8;
-}
-
-.input,
-.textarea {
-    border-radius: 0px;
-}
-
-.label:not(:last-child) {
-    margin-bottom: .5em;
-    margin-top: .5em;
+    position: sticky;
 }
 
 .button {
-    background-color: #00d1b2;
+    background-color: #989C94;
     border-color: transparent;
     color: #fff;
     border-radius: 0px;
@@ -51,42 +44,110 @@ body {
     text-decoration: none;
 }
 
-.column {
-    padding-top: 100px;
-}
-
-.sign-up-title {
-    text-align: center;
-    font-size: 40px;
-    padding-top: 10px;
-    padding-bottom: 50px;
-}
-
-#stylist-form {
-    margin-bottom: 50px;
-}
-
-#specs {
-    margin-top: 20px;
-    margin-bottom: 20px;
-    font-size: 20px;
-}
-
-.navbar {
-    min-height: 3.25rem;
-    position: absolute;
-    background: transparent;
-}
-
 #logo {
     font-size: 35px;
-    color: black;
+    color: blue;
 }
 
 .columns {
     margin-left: 0px;
     margin-right: 0px;
     margin-top: 0px;
+}
+
+.button {
+    box-shadow: 3px 3px 3px #989C94;
+}
+
+button {
+    box-shadow: 3px 3px 3px #989C94;
+    font-family: 'Contrail One', cursive;
+}
+
+input {
+    border-radius: 0px;
+    box-shadow: 3px 3px 3px #000;
+}
+
+.modal-background {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: transparent;
+    width: 300px;
+    height: 400px;
+}
+
+.modal-card-body {
+    -webkit-overflow-scrolling: touch;
+    background-color: #eee;
+    box-shadow: 3px 3px 3px grey;
+    height: 310px;
+}
+
+.modal-card-head {
+    background: #F34213;
+    border-bottom: none;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    margin-top: 15%;
+}
+
+.modal-card-foot {
+    padding: 0px;
+}
+
+input {
+    font-family: 'Contrail One', cursive;
+}
+
+.modal-card {
+    width: 400px;
+}
+
+.modal-card-foot {
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-top: 0px solid transparent;
+}
+
+#sign-in-card {
+    width: 335px;
+}
+
+.field.is-grouped {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: block;
+    padding-top: 20px;
+    height: 291px;
+    padding-left: 8%;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+}
+
+#service {
+    margin-top: 15px;
+    margin-left: 30%;
+}
+
+#submit-login {
+    background-color: #323232;
+    border-color: transparent;
+    color: #fff;
+    width: 250px;
+}
+
+#cancel-btn-two {
+    background-color: #FE938C;
+    border-color: transparent;
+    color: #4a4a4a;
+    text-decoration: none;
+    width: 250px;
+    margin-top: 15px;
 }
 
 #main {
@@ -247,6 +308,17 @@ a.button {
     border: 1px solid darkgray;
     color: black;
     border-radius: 0px;
+}
+
+.select select:not([multiple]) {
+    padding-right: 2.5em;
+    margin-top: -31px;
+    width: 448px;
+    margin-left: -52px;
+}
+
+.search-text {
+    text-align: center;
 }
 
 /*
