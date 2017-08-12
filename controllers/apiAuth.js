@@ -23,7 +23,10 @@ router.put('/update', (req, res) => {
 
 router.get('/check', (req, res) => {
 	if (req.user) {
-		res.json(req.user.username);
+		res.json({
+			username: req.user.username,
+			id: req.user.id
+		});
 	} else {
 		res.end();
 	}
