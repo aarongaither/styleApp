@@ -61,6 +61,8 @@
                             buildStylistDisplay(i, display);
                             makeStylistMiniProfile(data[i]);
                             fillStylistMiniProfile(data[i]);
+
+                            google.maps.event.trigger(map, "resize");
                         }
               }
     	  });
