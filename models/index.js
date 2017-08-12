@@ -18,9 +18,9 @@ const connInfo = process.env.JAWSDB_URL || {
 }
 
 if (process.env.JAWSDB_URL) {
-  var sequelize = new Sequelize(process.env.JAWSDB_URL);
+  sequelize = new Sequelize(process.env.JAWSDB_URL);
 } else {
-  var sequelize = new Sequelize(connInfo.database, connInfo.user, connInfo.password, {
+  sequelize = new Sequelize(connInfo.database, connInfo.user, connInfo.password, {
     host: connInfo.host,
     dialect: 'mysql'
   });
