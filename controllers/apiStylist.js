@@ -27,7 +27,7 @@ router.put("/", (req, res) => {
 
 router.put("/:id/:photo", (req, res) => {
     db.Stylist.update({
-        picture: req.params.photo
+        picture: './photos/' +req.params.photo+'.jpg'
     },{
         where: {
             id: req.params.id
