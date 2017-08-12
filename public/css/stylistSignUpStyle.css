@@ -7,7 +7,7 @@ body {
 
 .navbar {
     min-height: 3.25rem;
-    /*position: fixed;*/
+    position: fixed;
     background: transparent;
     color: black;
 }
@@ -61,7 +61,7 @@ body {
 
 .navbar {
     min-height: 3.25rem;
-    /*position: absolute;*/
+    position: absolute;
 }
 
 #logo {

@@ -21,7 +21,7 @@ h1 {
 
 .navbar {
     min-height: 3.25rem;
-    /*position: absolute;*/
+    position: absolute;
     background: transparent;
 }
 
@@ -131,7 +131,7 @@ input {
 
 #service {
     margin-top: 15px;
-    margin-left: 7%;
+    margin-left: 30%;
 }
 
 #submit-login {
